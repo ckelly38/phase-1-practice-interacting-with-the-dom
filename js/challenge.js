@@ -28,13 +28,15 @@ document.getElementById('comment-form').addEventListener('submit', function(even
     //console.log("event.target = " + event.target);
     let commentInputElement = event.target.childNodes[1];
     //console.log("commentInputElement = " + commentInputElement);
-    let myval = commentInputElement.value;
+    let myval = "" + commentInputElement.value;
     //console.log("myval = " + myval);
     let mylistitem = document.createElement("p");
     mylistitem.innerText = myval;
     let clist = document.getElementById("list");
     clist.appendChild(mylistitem);
     //console.log("successfully added the comment!");
+    commentInputElement.innerText = "";
+    commentInputElement.value = "";
 });
 
 function incTimer()
